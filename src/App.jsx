@@ -9,6 +9,7 @@ import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
 import gsap from "gsap";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,20 @@ const App = () => {
   }, [loading]);
 
   return (
-    <>
+    <HelmetProvider>
+      {/* SEO Helmet */}
+      <Helmet>
+        <title>Farhan Sadik | Fullstack Web Developer (Frontend & Backend)</title>
+        <meta
+          name="description"
+          content="Farhan Sadik is a Fullstack Web Developer skilled in React, Tailwind CSS, JavaScript, and Node.js. Explore projects, skills, and contact for collaborations."
+        />
+        <meta
+          name="keywords"
+          content="Fullstack, Frontend, Backend, React, Node.js, Tailwind CSS, JavaScript, Portfolio"
+        />
+      </Helmet>
+
       {/* Loader */}
       {loading && (
         <div
@@ -85,13 +99,44 @@ const App = () => {
           <Hero />
           <ServiceSummary />
           <Services />
-          <About />
-          <Works />
-          <ContactSummary />
-          <Contact />
+
+          {/* About Section */}
+          <About id="about">
+            <h1>About Me</h1>
+            <p>
+              Farhan Sadik is a Fullstack Web Developer specializing in
+              frontend & backend development using React, Node.js, Tailwind
+              CSS, and modern technologies.
+            </p>
+          </About>
+
+          {/* Works / Projects Section */}
+          <Works id="work">
+            <h2>Projects & Works</h2>
+            <p>
+              Check out some of my React and fullstack projects demonstrating
+              modern web development and clean code practices.
+            </p>
+          </Works>
+
+          {/* Services Section */}
+          <Services id="services">
+            <h2>Services</h2>
+            <p>
+              I provide frontend & backend development services using modern
+              tech stack like React, Node.js, Tailwind CSS, and more.
+            </p>
+          </Services>
+
+          {/* Contact Section */}
+          <ContactSummary id="contact-summary" />
+          <Contact id="contact">
+            <h2>Contact Me</h2>
+            <p>Get in touch for collaborations, freelance projects, or queries.</p>
+          </Contact>
         </ReactLenis>
       )}
-    </>
+    </HelmetProvider>
   );
 };
 
