@@ -4,6 +4,8 @@ import { projects } from "../constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const Works = () => {
   const overlayRefs = useRef([]);
@@ -23,16 +25,19 @@ const Works = () => {
       ease: "power3.out",
     });
 
-    gsap.from("#project", {
-      y: 100,
-      opacity: 0,
-      delay: 0.5,
-      duration: 1,
-      stagger: 0.3,
-      ease: "back.out",
-      scrollTrigger: {
-        trigger: "#project",
-      },
+    // Animate each project separately on scroll
+    gsap.utils.toArray(".project").forEach((project, i) => {
+      gsap.from(project, {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.7)",
+        delay: i * 0.2, 
+        scrollTrigger: {
+          trigger: project,
+          toggleActions: "play none none reverse",
+        },
+      });
     });
   });
 
@@ -113,18 +118,16 @@ const Works = () => {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            id="project"
-            className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
+            className="project relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
             {/* overlay */}
             <div
-              ref={(el) => {
-                overlayRefs.current[index] = el;
-              }}
+              ref={(el) => (overlayRefs.current[index] = el)}
               className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
             />
+
             {/* title */}
             <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
               <h2 className="lg:text-[32px] text-[26px] leading-none">
@@ -136,7 +139,7 @@ const Works = () => {
             {/* divider */}
             <div className="w-full h-0.5 bg-black/80" />
 
-            {/* framework */}
+            {/* frameworks */}
             <div className="flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
               {project.frameworks.map((framework) => (
                 <p
@@ -148,7 +151,7 @@ const Works = () => {
               ))}
             </div>
 
-            {/* mobile preview images */}
+            {/* mobile preview */}
             <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
               <img
                 src={project.bgImage}
@@ -161,22 +164,22 @@ const Works = () => {
                 className="absolute bg-center px-14 rounded-xl"
               />
             </div>
-
-            {/* desktop flaoting preview image */}
-            <div
-              ref={previewRef}
-              className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-2/5 max-w-[960px] md:block hidden opacity-0"
-            >
-              {currentIndex !== null && (
-                <img
-                  src={projects[currentIndex].image}
-                  alt={`${projects.name}-preview`}
-                  className="object-cover w-full h-full"
-                />
-              )}
-            </div>
           </div>
         ))}
+
+        {/* floating preview (desktop only, single copy) */}
+        <div
+          ref={previewRef}
+          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none max-w-[960px] md:block hidden opacity-0"
+        >
+          {currentIndex !== null && (
+            <img
+              src={projects[currentIndex].image}
+              alt={`${projects[currentIndex].name}-preview`}
+              className="object-cover w-full h-full"
+            />
+          )}
+        </div>
       </div>
     </section>
   );
