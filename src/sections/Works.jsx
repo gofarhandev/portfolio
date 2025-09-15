@@ -32,10 +32,10 @@ const Works = () => {
         opacity: 0,
         duration: 1,
         ease: "back.out(1.7)",
-        delay: i * 0.2, 
+        delay: i * 0.2,
         scrollTrigger: {
           trigger: project,
-          toggleActions: "play none none reverse",
+          // toggleActions: "play none none reverse",
         },
       });
     });
@@ -133,7 +133,12 @@ const Works = () => {
               <h2 className="lg:text-[32px] text-[26px] leading-none">
                 {project.name}
               </h2>
-              <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
+              <a href={project.href} target="_blank">
+                <Icon
+                  icon="lucide:arrow-up-right"
+                  className="md:size-6 size-5"
+                />
+              </a>
             </div>
 
             {/* divider */}
@@ -170,7 +175,7 @@ const Works = () => {
         {/* floating preview (desktop only, single copy) */}
         <div
           ref={previewRef}
-          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none max-w-[960px] md:block hidden opacity-0"
+          className="fixed -top-2/7 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-2/5 max-w-[960px] md:block hidden opacity-0"
         >
           {currentIndex !== null && (
             <img

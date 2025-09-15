@@ -83,99 +83,94 @@ export const servicesData = [
     ],
   },
 ];
+
 export const projects = [
   {
     id: 1,
-    name: "Mobile Accessories E-commerce",
+    name: "ChatGPT",
     description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
-    href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
+      "A full-stack AI-powered chatbot application that leverages GeminiAi for intelligent conversations. Built with a React.js frontend, Node.js/Express backend, and MongoDB for data storage. Implements JWT authentication for secure user management and provides a responsive, modern UI using Tailwind CSS.",
+    href: "https://gpt-0-09.onrender.com/",
+    image:
+      "https://ik.imagekit.io/iura/Portfolio-project/gpt.png?updatedAt=1757763856691",
     bgImage: "/assets/backgrounds/blanket.jpg",
     frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
+      { id: 1, name: "React.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "GeminiAi" },
       { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
-    ],
-  },
-  {
-    id: 2,
-    name: "Plant Shop E-commerce",
-    description:
-      "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
-    href: "",
-    image: "/assets/projects/plant-shop.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Stripe API" },
-      { id: 4, name: "Tailwind CSS" },
-    ],
-  },
-  {
-    id: 3,
-    name: "Apple Tech Marketplace",
-    description:
-      "An e-commerce platform for Apple products and accessories with deals and category filtering.",
-    href: "",
-    image: "/assets/projects/apple-tech-store.jpg",
-    bgImage: "/assets/backgrounds/map.jpg",
-    frameworks: [
-      { id: 1, name: "Blazor" },
-      { id: 2, name: "ASP.NET Core" },
-      { id: 3, name: "SQL Server" },
-      { id: 4, name: "Bootstrap" },
+      { id: 5, name: "Express" },
+      { id: 6, name: "Node" },
+      { id: 7, name: "JWT" },
     ],
   },
   {
     id: 4,
-    name: "Electronics & Gadgets Store",
+    name: "Moody Player",
     description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
-    href: "",
-    image: "/assets/projects/electronics-store.jpg",
-    bgImage: "/assets/backgrounds/poster.jpg",
+      "A backend system for a moody music player that recommends and plays songs based on users' facial expressions. Developed with Node.js and Express, it manages audio streaming, mood-based playlist generation, and secure user authentication to deliver a personalized music experience.",
+    href: "https://moody-player-gold.vercel.app/",
+    image:
+      "https://ik.imagekit.io/iura/Portfolio-project/moody.png?updatedAt=1756855030847",
+    bgImage: "/assets/backgrounds/curtains.jpg",
     frameworks: [
-      { id: 1, name: "Vue.js" },
-      { id: 2, name: "Laravel" },
-      { id: 3, name: "MySQL" },
-      { id: 4, name: "SCSS" },
+      { id: 1, name: "React.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "Express" },
+      { id: 4, name: "Node" },
+      { id: 5, name: "imagekit" },
     ],
   },
   {
     id: 5,
-    name: "Home Decor Marketplace",
+    name: "Havmor Ice-Cream",
     description:
-      "A curated collection of designer home decor items, including furniture and artisan vases.",
-    href: "",
-    image: "/assets/projects/home-decor-store.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
+      "Havmor Ice-Cream is a full-stack web application developed as part of the Sheriyans Hackathon. This project features a modern and responsive user interface built with React.js and styled using Tailwind CSS, ensuring smooth and visually appealing experiences across devices. GSAP animations are used to add engaging transitions and interactive elements throughout the app. On the backend, it utilizes Node.js and Express to handle server-side logic, while MongoDB provides a scalable database solution for storing and managing user and product data. Secure user authentication is implemented using JWT, enabling protected routes and personalized experiences. The application includes real-world features such as dynamic product listings, user account management, and seamless interactivity, making it a robust full-stack project showcasing practical web development skills from frontend design to backend functionality.",
+    href: "https://havmor.vercel.app/",
+    image:
+      "https://ik.imagekit.io/iura/Portfolio-project/Havmor.png?updatedAt=1756855023552",
+    bgImage: "/assets/backgrounds/map.jpg",
     frameworks: [
-      { id: 1, name: "Angular" },
-      { id: 2, name: "Firebase" },
-      { id: 3, name: "GraphQL" },
-      { id: 4, name: "Material UI" },
+      { id: 1, name: "React.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "GSAP" },
+      { id: 4, name: "MongoDB" },
+      { id: 5, name: "Express" },
+      { id: 6, name: "Node" },
+      { id: 7, name: "JWT" },
     ],
   },
   {
-    id: 6,
-    name: "Digital Game Store",
+    id: 7,
+    name: "Clothing Store",
     description:
-      "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
-    href: "",
-    image: "/assets/projects/game-store.jpg",
+      "Clothing Store is a fully responsive fashion e-commerce frontend built with React.js and styled with Tailwind CSS. The site features a clean and modern user interface, intuitive navigation, and seamless product browsing experience. Users can easily filter products by category or search for specific items, enhancing usability and engagement. With a focus on modern design principles, responsive layouts, and smooth interactions, this project demonstrates proficiency in frontend development and UI/UX design, making it a polished showcase of a practical online store interface.",
+    href: "https://clothes-store-002.netlify.app/",
+    image:
+      "https://ik.imagekit.io/iura/Portfolio-project/DripNest-pro.png?updatedAt=1756855024647",
     bgImage: "/assets/backgrounds/curtains.jpg",
     frameworks: [
-      { id: 1, name: "Svelte" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "MongoDB" },
-      { id: 4, name: "Chakra UI" },
+      { id: 1, name: "React.js" },
+      { id: 2, name: "Tailwind CSS" },
+    ],
+  },
+  {
+    id: 10,
+    name: "My Gadget Bd",
+    description:
+      "My Gadget Bd is a modern eCommerce frontend platform built with React.js and Redux for state management, styled using Tailwind CSS. The website allows users to browse, filter, and search for the latest gadgets efficiently. With a focus on responsive design and user-friendly interface, it ensures seamless interaction across devices, providing an engaging shopping experience. This project highlights advanced frontend skills including dynamic rendering, live search functionality, and clean UI design.",
+    href: "https://my-gadget-bd.netlify.app/",
+    image:
+      "https://ik.imagekit.io/iura/Portfolio-project/Gadget.png?updatedAt=1756855024500",
+    bgImage: "/assets/backgrounds/poster.jpg",
+    frameworks: [
+      { id: 1, name: "React.js" },
+      { id: 2, name: "Redux" },
+      { id: 3, name: "Tailwind CSS" },
     ],
   },
 ];
+
 export const socials = [
   { name: "Instagram", href: "https://www.instagram.com/gofarhandev/" },
   { name: "Facebook", href: "https://www.facebook.com/gofarhandev/" },

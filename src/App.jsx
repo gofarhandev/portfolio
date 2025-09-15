@@ -49,14 +49,14 @@ const App = () => {
     <HelmetProvider>
       {/* SEO Helmet */}
       <Helmet>
-        <title>Farhan Sadik | Fullstack Web Developer (Frontend & Backend)</title>
+        <title>Farhan Sadik | Full Stack Developer | Portfolio</title>
         <meta
           name="description"
-          content="Farhan Sadik is a Fullstack Web Developer skilled in React, Tailwind CSS, JavaScript, and Node.js. Explore projects, skills, and contact for collaborations."
+          content="ফারহান সাদিক একজন ফুল স্ট্যাক ডেভেলপার। তিনি ফ্রিল্যান্সিং সার্ভিস দিয়ে থাকেন। তার পোর্টফোলিও দেখতে ভিজিট করুন।"
         />
         <meta
           name="keywords"
-          content="Fullstack, Frontend, Backend, React, Node.js, Tailwind CSS, JavaScript, Portfolio"
+          content="Farhan Sadik, md Farhan, md Farhan Sadik, Farhan, Full stack developer, fullstack developer, web developer, software developer, freelance developer, MERN stack, React developer, Node.js, Express.js, MongoDB, JavaScript, Tailwind CSS, portfolio website, custom web applications, ফ্রিল্যান্সার, ফ্রিল্যান্সিং, পোর্টফোলিও, ওয়েব ডেভেলপার, ওয়েবসাইট তৈরি, ওয়েবসাইট ডিজাইন, ওয়েব ডিজাইন, সফটওয়্যার ডেভেলপার, ফ্রন্টএন্ড ডেভেলপার, ব্যাকএন্ড ডেভেলপার, ফ্রিল্যান্সিং সার্ভিস, ফুল স্ট্যাক ডেভেলপার বাংলাদেশ"
         />
       </Helmet>
 
@@ -82,7 +82,7 @@ const App = () => {
           <div className="relative h-1 overflow-hidden rounded w-60 bg-white/20">
             <div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-white via-gray-200 to-white 
-              animate-[shine_1.5s_linear_infinite]"
+            animate-[shine_1.5s_linear_infinite]"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
@@ -98,15 +98,23 @@ const App = () => {
           <Navbar />
           <Hero />
           <ServiceSummary />
-          <Services />
+
+          {/* Services Section */}
+          <Services id="services">
+            <h2>Services</h2>
+            <p>
+              I provide frontend & backend development services using modern
+              tech stack like React, Node.js, Tailwind CSS, and more.
+            </p>
+          </Services>
 
           {/* About Section */}
           <About id="about">
             <h1>About Me</h1>
             <p>
-              Farhan Sadik is a Fullstack Web Developer specializing in
-              frontend & backend development using React, Node.js, Tailwind
-              CSS, and modern technologies.
+              Farhan Sadik is a Fullstack Web Developer specializing in frontend
+              & backend development using React, Node.js, Tailwind CSS, and
+              modern technologies.
             </p>
           </About>
 
@@ -119,20 +127,13 @@ const App = () => {
             </p>
           </Works>
 
-          {/* Services Section */}
-          <Services id="services">
-            <h2>Services</h2>
-            <p>
-              I provide frontend & backend development services using modern
-              tech stack like React, Node.js, Tailwind CSS, and more.
-            </p>
-          </Services>
-
           {/* Contact Section */}
           <ContactSummary id="contact-summary" />
           <Contact id="contact">
             <h2>Contact Me</h2>
-            <p>Get in touch for collaborations, freelance projects, or queries.</p>
+            <p>
+              Get in touch for collaborations, freelance projects, or queries.
+            </p>
           </Contact>
         </ReactLenis>
       )}
