@@ -25,9 +25,9 @@ const ContactSummary = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "center center",
-        end: "+=800 center",
+        // end: "+=800 center",
         scrub: 0.5,
-        pin: true,
+        // pin: true,
         pinSpacing: true,
       },
     });

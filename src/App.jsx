@@ -3,7 +3,7 @@ import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import ServiceSummary from "./sections/ServiceSummary";
 import Services from "./sections/Services";
-import ReactLenis from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import About from "./sections/About";
 import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
@@ -15,6 +15,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
+  // Use a single useEffect for both the progress interval and the loader state
   useEffect(() => {
     let interval = setInterval(() => {
       setProgress((old) => {
@@ -26,24 +27,26 @@ const App = () => {
         return old + 2;
       });
     }, 50);
-  }, []);
 
-  // GSAP Text Animation
-  useEffect(() => {
-    if (loading) {
-      gsap.fromTo(
-        ".loader-text span",
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-          duration: 0.6,
-        }
-      );
-    }
-  }, [loading]);
+    // GSAP Text Animation
+    const loaderTextChars = gsap.fromTo(
+      ".loader-text span",
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power3.out",
+        duration: 0.6,
+      }
+    );
+
+    // Clean up GSAP animation on component unmount
+    return () => {
+      clearInterval(interval);
+      loaderTextChars.revert();
+    };
+  }, []);
 
   return (
     <HelmetProvider>
@@ -63,8 +66,8 @@ const App = () => {
       {/* Loader */}
       {loading && (
         <div
-          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center 
-          bg-black text-white font-light transition-opacity duration-700`}
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center 
+          bg-black text-white font-light transition-opacity duration-700 overflow-hidden" // Added overflow-hidden to prevent mobile scroll issues
         >
           {/* Animated Text */}
           <p className="loader-text mb-6 flex gap-1 text-2xl tracking-[0.2em] uppercase overflow-hidden">
@@ -82,7 +85,7 @@ const App = () => {
           <div className="relative h-1 overflow-hidden rounded w-60 bg-white/20">
             <div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-white via-gray-200 to-white 
-            animate-[shine_1.5s_linear_infinite]"
+              animate-[shine_1.5s_linear_infinite]"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
@@ -98,8 +101,6 @@ const App = () => {
           <Navbar />
           <Hero />
           <ServiceSummary />
-
-          {/* Services Section */}
           <Services id="services">
             <h2>Services</h2>
             <p>
@@ -107,8 +108,6 @@ const App = () => {
               tech stack like React, Node.js, Tailwind CSS, and more.
             </p>
           </Services>
-
-          {/* About Section */}
           <About id="about">
             <h1>About Me</h1>
             <p>
@@ -117,8 +116,6 @@ const App = () => {
               modern technologies.
             </p>
           </About>
-
-          {/* Works / Projects Section */}
           <Works id="work">
             <h2>Projects & Works</h2>
             <p>
@@ -126,8 +123,6 @@ const App = () => {
               modern web development and clean code practices.
             </p>
           </Works>
-
-          {/* Contact Section */}
           <ContactSummary id="contact-summary" />
           <Contact id="contact">
             <h2>Contact Me</h2>

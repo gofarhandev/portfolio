@@ -145,11 +145,11 @@ const Works = () => {
             <div className="w-full h-0.5 bg-black/80" />
 
             {/* frameworks */}
-            <div className="flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
+            <div className="flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12 overflow-x-scroll scroll-hidden">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
-                  className="text-black transition-colors duration-500 md:group-hover:text-white"
+                  className="text-black transition-colors duration-500 md:group-hover:text-white whitespace-nowrap"
                 >
                   {framework.name}
                 </p>
@@ -157,16 +157,16 @@ const Works = () => {
             </div>
 
             {/* mobile preview */}
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
+            <div className="relative flex items-center justify-center px-10 md:hidden h-[250px]">
               <img
                 src={project.bgImage}
                 alt={`${project.name}-bg-image`}
-                className="object-cover w-full h-full rounded-md brightness-50"
+                className="object-cover w-full h-full rounded-md brightness-20"
               />
               <img
                 src={project.image}
                 alt={`${project.name}-image`}
-                className="absolute bg-center px-14 rounded-xl"
+                className="absolute bg-center w-10/15 rounded-lg border border-black"
               />
             </div>
           </div>
