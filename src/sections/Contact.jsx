@@ -72,6 +72,7 @@ const Contact = () => {
                     key={index}
                     href={social.href}
                     target="_blank"
+                    aria-label={`Visit my ${social.name} profile`}
                     className="text-xs leading-loose tracking-widest uppercase md:text-sm hover:text-white/80 transition-colors duration-200"
                   >
                     {"{ "}
