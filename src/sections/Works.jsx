@@ -133,7 +133,12 @@ const Works = () => {
               <h2 className="lg:text-[32px] text-[26px] leading-none">
                 {project.name}
               </h2>
-              <a href={project.href} target="_blank">
+              <a
+                href={project.href}
+                target="_blank"
+                className="relative"
+                aria-label={`Visit ${project.name}`}
+              >
                 <Icon
                   icon="lucide:arrow-up-right"
                   className="md:size-6 size-5"

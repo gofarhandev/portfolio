@@ -106,12 +106,12 @@ const Navbar = () => {
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
                 <Link
-                onClick={toggleMenu}
+                  onClick={toggleMenu}
                   className="transition-all duration-300 cursor-pointer hover:text-white"
                   to={`${section}`}
                   smooth
                   offset={0}
-                  duration={2000}
+                  duration={1000}
                 >
                   {section}
                 </Link>
@@ -137,6 +137,8 @@ const Navbar = () => {
                   key={index}
                   href={social.href}
                   className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
+                  target="_blank"
+                  aria-label={`Visit my ${social.name} profile`}
                 >
                   {"{ "}
                   {social.name}

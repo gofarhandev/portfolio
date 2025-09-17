@@ -8,43 +8,26 @@ import About from "./sections/About";
 import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
-import gsap from "gsap";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
-  // Use a single useEffect for both the progress interval and the loader state
   useEffect(() => {
     let interval = setInterval(() => {
       setProgress((old) => {
         if (old >= 100) {
           clearInterval(interval);
-          setTimeout(() => setLoading(false), 800);
+          setTimeout(() => setLoading(false), 50);
           return 100;
         }
-        return old + 2;
+        return old + 10;
       });
-    }, 50);
+    }, 20);
 
-    // GSAP Text Animation
-    const loaderTextChars = gsap.fromTo(
-      ".loader-text span",
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "power3.out",
-        duration: 0.6,
-      }
-    );
-
-    // Clean up GSAP animation on component unmount
     return () => {
       clearInterval(interval);
-      loaderTextChars.revert();
     };
   }, []);
 
@@ -67,14 +50,9 @@ const App = () => {
       {loading && (
         <div
           className="fixed inset-0 z-[999] flex flex-col items-center justify-center 
-          bg-black text-white font-light transition-opacity duration-700 overflow-hidden" // Added overflow-hidden to prevent mobile scroll issues
+          bg-black text-white font-light transition-opacity duration-700 overflow-hidden"
         >
-          {/* Animated Text */}
-          <p className="loader-text mb-6 flex gap-1 text-2xl tracking-[0.2em] uppercase overflow-hidden">
-            {"Assalamu Alaikum".split("").map((char, i) => (
-              <span key={i}>{char}</span>
-            ))}
-          </p>
+          {/* Removed the Animated Text */}
 
           {/* Progress Text */}
           <p className="mb-4 text-sm tracking-widest">
