@@ -106,6 +106,7 @@ const Navbar = () => {
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
                 <Link
+                onClick={toggleMenu}
                   className="transition-all duration-300 cursor-pointer hover:text-white"
                   to={`${section}`}
                   smooth

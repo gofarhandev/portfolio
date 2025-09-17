@@ -92,7 +92,6 @@ export const projects = [
       "A full-stack AI-powered chatbot application that leverages GeminiAi for intelligent conversations. Built with a React.js frontend, Node.js/Express backend, and MongoDB for data storage. Implements JWT authentication for secure user management and provides a responsive, modern UI using Tailwind CSS.",
     href: "https://gpt-0-09.onrender.com/",
     image: "https://ik.imagekit.io/iura/pp/gpt(1).png?updatedAt=1757909821815",
-    bgImage: "/assets/backgrounds/blanket.jpg",
     frameworks: [
       { id: 1, name: "React.js" },
       { id: 2, name: "Tailwind CSS" },
@@ -126,7 +125,6 @@ export const projects = [
       "Havmor Ice-Cream is a full-stack web application developed as part of the Sheriyans Hackathon. This project features a modern and responsive user interface built with React.js and styled using Tailwind CSS, ensuring smooth and visually appealing experiences across devices. GSAP animations are used to add engaging transitions and interactive elements throughout the app. On the backend, it utilizes Node.js and Express to handle server-side logic, while MongoDB provides a scalable database solution for storing and managing user and product data. Secure user authentication is implemented using JWT, enabling protected routes and personalized experiences. The application includes real-world features such as dynamic product listings, user account management, and seamless interactivity, making it a robust full-stack project showcasing practical web development skills from frontend design to backend functionality.",
     href: "https://havmor.vercel.app/",
     image: "https://ik.imagekit.io/iura/pp/havmor.png?updatedAt=1757909703114",
-    bgImage: "/assets/backgrounds/map.jpg",
     frameworks: [
       { id: 1, name: "React.js" },
       { id: 2, name: "Tailwind CSS" },
@@ -145,7 +143,6 @@ export const projects = [
     href: "https://clothes-store-002.netlify.app/",
     image:
       "https://ik.imagekit.io/iura/pp/dripnest.png?updatedAt=1757909704845",
-    bgImage: "/assets/backgrounds/curtains.jpg",
     frameworks: [
       { id: 1, name: "React.js" },
       { id: 2, name: "Tailwind CSS" },
@@ -159,7 +156,6 @@ export const projects = [
     href: "https://codexfoli0.vercel.app/",
     image:
       "https://ik.imagekit.io/iura/pp/codexfolio.png?updatedAt=1757909703020",
-    bgImage: "/assets/backgrounds/poster.jpg",
     frameworks: [
       { id: 1, name: "React.js" },
       { id: 2, name: "GSAP" },
