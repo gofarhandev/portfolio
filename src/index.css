@@ -88,7 +88,7 @@
   font-display: swap;
 }
 @theme {
-  --color-primary: #e5e5e0;
+  --color-primary: #fffffc;
   --color-DarkLava: #393632;
   --color-SageGray: #8b8b73;
   --color-gold: #FFC125;
@@ -107,8 +107,8 @@
 }
 
 body {
-  background: #e5e5e0;
-  color: black;
+  background: var(--color-primary);
+  color: rgb(0, 0, 0);
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: var(--font-amiamie);

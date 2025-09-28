@@ -25,7 +25,7 @@ const Navbar = () => {
       .timeline({ paused: true })
       .to(navRef.current, {
         xPercent: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "power3.out",
       })
       .to(
@@ -34,7 +34,7 @@ const Navbar = () => {
           autoAlpha: 1,
           x: 0,
           stagger: 0.1,
-          duration: 0.5,
+          duration: 0.3,
           ease: "power2.out",
         },
         "<"
@@ -44,7 +44,7 @@ const Navbar = () => {
         {
           autoAlpha: 1,
           x: 0,
-          duration: 0.5,
+          duration: 0.3,
           ease: "power2.out",
         },
         "<+0.2"
@@ -55,7 +55,7 @@ const Navbar = () => {
       .to(topLineRef.current, {
         rotate: 45,
         y: 3.3,
-        duration: 0.3,
+        duration: 0.2,
         ease: "power2.inOut",
       })
       .to(
@@ -99,7 +99,7 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
+        className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/90 rounded-l-2xl py-28 gap-y-10 md:w-1/2 md:left-1/2"
       >
         <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-6xl">
           {["home", "services", "about", "works", "contact"].map(

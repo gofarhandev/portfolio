@@ -9,6 +9,7 @@ import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import DynamicTitle from "./components/DynamicTitle";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -38,7 +39,7 @@ const App = () => {
         <title>Farhan Sadik | Full Stack Developer | Portfolio</title>
         <meta
           name="description"
-          content="ফারহান সাদিক একজন ফুল স্ট্যাক ডেভেলপার। আধুনিক প্রযুক্তি যেমন React, Node.js, এবং Tailwind CSS ব্যবহার করে ওয়েবসাইট তৈরি করি। ফ্রিল্যান্সিং সার্ভিস, পোর্টফোলিও এবং কাজের জন্য যোগাযোগ করুন। Farhan Sadik is a Full Stack Developer specializing in MERN stack. Explore his portfolio for projects, skills, and collaboration opportunities."
+          content="ফারহান সাদিক একজন ফুল স্ট্যাক ডেভেলপার। আধুনিক প্রযুক্তি যেমন React, Node.js, এবং Tailwind CSS ব্যবহার করে ওয়েবসাইট তৈরি করেন। ফ্রিল্যান্সিং সার্ভিস, পোর্টফোলিও এবং কাজের জন্য যোগাযোগ করুন। Farhan Sadik is a Full Stack Developer specializing in MERN stack. Explore his portfolio for projects, skills, and collaboration opportunities."
         />
         <meta
           name="keywords"
@@ -52,9 +53,6 @@ const App = () => {
           className="fixed inset-0 z-[999] flex flex-col items-center justify-center 
           bg-black text-white font-light transition-opacity duration-700 overflow-hidden"
         >
-          {/* Removed the Animated Text */}
-
-          {/* Progress Text */}
           <p className="mb-4 text-sm tracking-widest">
             Loading {Math.floor(progress)}%
           </p>
@@ -76,6 +74,7 @@ const App = () => {
           root
           className="relative w-screen min-h-screen overflow-x-hidden"
         >
+          <DynamicTitle />
           <Navbar />
           <Hero />
           <ServiceSummary />
