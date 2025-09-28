@@ -12,26 +12,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import DynamicTitle from "./components/DynamicTitle";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setProgress((old) => {
-        if (old >= 100) {
-          clearInterval(interval);
-          setTimeout(() => setLoading(false), 50);
-          return 100;
-        }
-        return old + 10;
-      });
-    }, 20);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <HelmetProvider>
       {/* SEO Helmet */}
@@ -48,67 +28,45 @@ const App = () => {
       </Helmet>
 
       {/* Loader */}
-      {loading && (
-        <div
-          className="fixed inset-0 z-[999] flex flex-col items-center justify-center 
-          bg-black text-white font-light transition-opacity duration-700 overflow-hidden"
-        >
-          <p className="mb-4 text-sm tracking-widest">
-            Loading {Math.floor(progress)}%
-          </p>
-
-          {/* Progress Bar */}
-          <div className="relative h-1 overflow-hidden rounded w-60 bg-white/20">
-            <div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-white via-gray-200 to-white 
-              animate-[shine_1.5s_linear_infinite]"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-        </div>
-      )}
-
       {/* Main App */}
-      {!loading && (
-        <ReactLenis
-          root
-          className="relative w-screen min-h-screen overflow-x-hidden"
-        >
-          <DynamicTitle />
-          <Navbar />
-          <Hero />
-          <ServiceSummary />
-          <Services id="services">
-            <h2>Services</h2>
-            <p>
-              I provide frontend & backend development services using modern
-              tech stack like React, Node.js, Tailwind CSS, and more.
-            </p>
-          </Services>
-          <About id="about">
-            <h1>About Me</h1>
-            <p>
-              Farhan Sadik is a Fullstack Web Developer specializing in frontend
-              & backend development using React, Node.js, Tailwind CSS, and
-              modern technologies.
-            </p>
-          </About>
-          <Works id="work">
-            <h2>Projects & Works</h2>
-            <p>
-              Check out some of my React and fullstack projects demonstrating
-              modern web development and clean code practices.
-            </p>
-          </Works>
-          <ContactSummary id="contact-summary" />
-          <Contact id="contact">
-            <h2>Contact Me</h2>
-            <p>
-              Get in touch for collaborations, freelance projects, or queries.
-            </p>
-          </Contact>
-        </ReactLenis>
-      )}
+      <ReactLenis
+        root
+        className="relative w-screen min-h-screen overflow-x-hidden"
+      >
+        <DynamicTitle />
+        <Navbar />
+        <Hero />
+        <ServiceSummary />
+        <Services id="services">
+          <h2>Services</h2>
+          <p>
+            I provide frontend & backend development services using modern tech
+            stack like React, Node.js, Tailwind CSS, and more.
+          </p>
+        </Services>
+        <About id="about">
+          <h1>About Me</h1>
+          <p>
+            Farhan Sadik is a Fullstack Web Developer specializing in frontend &
+            backend development using React, Node.js, Tailwind CSS, and modern
+            technologies.
+          </p>
+        </About>
+        <Works id="work">
+          <h2>Projects & Works</h2>
+          <p>
+            Check out some of my React and fullstack projects demonstrating
+            modern web development and clean code practices.
+          </p>
+        </Works>
+        <ContactSummary id="contact-summary" />
+        <Contact id="contact">
+          <h2>Contact Me</h2>
+          <p>
+            Get in touch for collaborations, freelance projects, or queries.
+          </p>
+        </Contact>
+      </ReactLenis>
     </HelmetProvider>
   );
 };
