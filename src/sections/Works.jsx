@@ -150,7 +150,7 @@ const Works = () => {
             <div className="w-full h-0.5 bg-black/80" />
 
             {/* frameworks */}
-            <div className="flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12 overflow-x-scroll scroll-hidden">
+            <div className="flex mx-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:mx-12 overflow-x-scroll scroll-hidden">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
@@ -162,7 +162,7 @@ const Works = () => {
             </div>
 
             {/* mobile preview */}
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[250px]">
+            <div className="relative flex items-center justify-center px-10 md:hidden">
               <img
                 src={project.image}
                 alt={`${project.name}-image`}

@@ -15,8 +15,8 @@ const AnimatedTextLines = ({ text, className }) => {
       gsap.from(lineRefs.current, {
         y: 100,
         opacity: 0,
-        duration: 1,
-        stagger: 0.3,
+        duration: 0.8,
+        stagger: 0.2,
         ease: "back.out",
         scrollTrigger: {
           trigger: containerRef.current,

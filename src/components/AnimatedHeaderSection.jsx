@@ -26,7 +26,7 @@ const AnimatedHeaderSection = ({
 
     tl.from(contextRef.current, {
       y: "50vh",
-      duration: 1,
+      duration: 0.8,
       ease: "circ.out",
     });
     tl.from(
@@ -34,7 +34,7 @@ const AnimatedHeaderSection = ({
       {
         opacity: 0,
         y: "200",
-        duration: 1,
+        duration: 0.8,
         ease: "circ.out",
       },
       "<+0.2"

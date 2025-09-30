@@ -45,8 +45,8 @@ const About = () => {
       <div className="flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/80">
         <img
           ref={imgRef}
-          src="images/man.jpg"
-          alt="man"
+          src="https://ik.imagekit.io/iura/Portfolio-project/portfolio.jpg?updatedAt=1759214808426"
+          alt="Farhan Sadik"
           className="w-md rounded-3xl"
         />
         <AnimatedTextLines
